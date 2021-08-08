@@ -1,0 +1,34 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+.logoPos{
+    animation: mymove 5s forwards;
+    position: relative;
+    width: 200px;
+}
+
+.imageSpin{
+    animation: spin 5s forwards;
+}
+
+@keyframes spin{
+    from {
+        transform: rotateY(0deg) scale(1);
+    }
+    to{
+        transform: rotateY(360deg) scale(0.65);
+    }
+}
+
+@keyframes mymove {
+    from {
+    top: 50vh;
+    left:50%;  
+    }
+    to {
+    top: 20px;
+    left:20px;
+    }
+  }
