@@ -9,13 +9,21 @@ import Navbar from "react-bootstrap/Navbar";
 import Container from "react-bootstrap/Container";
 import Nav from "react-bootstrap/Nav";
 
-import "../utilities/css/home.css";
-import { useState } from "react";
+import "../utilities/css/home.scss";
+import { useState,useRef } from "react";
 
 export default function Home() {
   const [pageStatus, setPageStatus] = useState("loading");
 
-  setTimeout(() => setPageStatus("running"), 5000);
+  const [imageAnimation,setImageAnimation] = useState('');
+
+  setTimeout(function(){
+    setImageAnimation("animate");
+} , 6000);
+  
+  setTimeout(function(){
+    setPageStatus("running")
+} , 5000);
   return (
     <div className="home container-fluid">
       <Navbar
@@ -43,8 +51,8 @@ export default function Home() {
         </div>
       ) : (
         <div className="home__wrapper row justify-content-center align-items-center">
-          <div className="home__image col-5 text-end animate__animated animate__fadeIn">
-            <img className="img--avatar" src={Avatar}></img>
+          <div className="home__image col-6 col-lg-5 text-lg-end text-center animate__animated animate__fadeIn">
+            <img className={`img--avatar ${imageAnimation}`} src={Avatar}></img>
           </div>
           <div className="home__text col-5 animate__animated animate__fadeIn">
               <h1 className="text--back-ground">Home</h1>
