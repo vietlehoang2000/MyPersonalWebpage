@@ -4,7 +4,9 @@ import Button from "react-bootstrap/Button";
 
 import Galery from "../utilities/image/galery.png";
 
-import * as Scroll from 'react-scroll';
+import PorfolioItems from "../utilities/data/porfolio";
+
+import Item from "./itemList";
 
 import {
   FaFacebookSquare,
@@ -21,6 +23,11 @@ import { useState, useRef } from "react";
 import BurgerMenu from "./burgermenu";
 
 export default function Home() {
+
+  const [workItems,setWorkItems] = useState(PorfolioItems);
+
+  const [category,setCategory] = useState("All")
+
   const [pageStatus, setPageStatus] = useState("loading");
 
   const [imageAnimation, setImageAnimation] = useState("");
@@ -51,7 +58,10 @@ export default function Home() {
             <img class="imageSpinNav" src={Logo}></img>
           </div>
           <BurgerMenu show={show} handleClose={handleClose}></BurgerMenu>
-          <div id="home" className="home__wrapper row justify-content-center align-items-center">
+          <div
+            id="home"
+            className="home__wrapper row justify-content-center align-items-center"
+          >
             <div className="home__image col-10 col-sm-7 col-lg-5 text-lg-end text-center animate__animated animate__fadeIn">
               <img
                 className={`img--avatar ${imageAnimation}`}
@@ -118,8 +128,31 @@ export default function Home() {
               </div>
             </div>
           </div>
-          <div id="porfolio" className="profolio__wrapper container">
-            
+
+          <div id="porfolio" className="porfolio__wrapper container mt-5">
+            <div className="porfolio-text">
+              <h1 className="text--back-ground">Porfolio</h1>
+              <h1 className="text-main">My works</h1>
+            </div>
+            <div className="porfolio-category ">
+              <ul className="d-flex justify-content-center">
+                <li className={category==="All"&&"active"} onClick={()=>setCategory("All")}>All</li>
+                <li className={category==="React"&&"active"} onClick={()=>setCategory("React")}>React</li>
+                <li className={category==="JQuerry"&&"active"} onClick={()=>setCategory("JQuerry")}>JQuerry</li>
+                <li className={category==="Vanilla"&&"active"} onClick={()=>setCategory("Vanilla")}>Vanilla</li>
+                <li className={category==="UI"&&"active"} onClick={()=>setCategory("UI")}>UI/UX</li>
+              </ul>
+            </div>
+            <div className="items-list row">
+               {
+                 workItems.map(function(item){
+                   if(item.category.some((product) => product===category))
+                    {
+                      return <Item item={item} category={category} imageAnimation={imageAnimation}></Item>
+                    }
+                 })
+               }
+            </div>
           </div>
         </>
       )}
