@@ -5,6 +5,7 @@ import Logo from "../utilities/image/Logo.svg";
 import {IoCloseSharp} from 'react-icons/io5'
 
 import Nav from 'react-bootstrap/Nav'
+import Button from "react-bootstrap/Button";
 
 export default function BurgerMenu({ show, handleClose }) {
   return (
@@ -23,6 +24,9 @@ export default function BurgerMenu({ show, handleClose }) {
             <Nav.Link className="text-center" href="#features">About</Nav.Link>
             <Nav.Link className="text-center" href="#Porfolio">Porfolio</Nav.Link>
             <Nav.Link className="text-center" href="#Contact">Contact</Nav.Link>
+            <Button className="button--cv col-4 mx-auto" size="sm">
+                  My CV
+            </Button>
           </Nav>
         <h5 className="text-center mt-3">©2021 Vivian</h5>
         <h5 className="text-center">+81 0972136868</h5>

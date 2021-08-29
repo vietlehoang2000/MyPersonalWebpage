@@ -1,10 +1,11 @@
 import './App.scss';
-import Button from 'react-bootstrap/Button'
+
 import Home from './components/home';
 
 import Navbar from "react-bootstrap/Navbar";
 import Container from "react-bootstrap/Container";
 import Nav from "react-bootstrap/Nav";
+import Button from 'react-bootstrap/Button';
 
 import Logo from "./utilities/image/Logo.svg";
 
@@ -26,10 +27,14 @@ function App() {
             <Nav.Link href="#features">About</Nav.Link>
             <Nav.Link href="#Porfolio">Porfolio</Nav.Link>
             <Nav.Link href="#Contact">Contact</Nav.Link>
+            <Button className="button--cv" size="sm">
+                  My CV
+            </Button>
           </Nav>
         </Container>
       </Navbar>
    <Home></Home>
+
     </>
   );
 }
