@@ -4,6 +4,8 @@ import Button from "react-bootstrap/Button";
 
 import Galery from "../utilities/image/galery.png";
 
+import * as Scroll from 'react-scroll';
+
 import {
   FaFacebookSquare,
   FaInstagramSquare,
@@ -49,7 +51,7 @@ export default function Home() {
             <img class="imageSpinNav" src={Logo}></img>
           </div>
           <BurgerMenu show={show} handleClose={handleClose}></BurgerMenu>
-          <div className="home__wrapper row justify-content-center align-items-center">
+          <div id="home" className="home__wrapper row justify-content-center align-items-center">
             <div className="home__image col-10 col-sm-7 col-lg-5 text-lg-end text-center animate__animated animate__fadeIn">
               <img
                 className={`img--avatar ${imageAnimation}`}
@@ -74,7 +76,7 @@ export default function Home() {
             </div>
           </div>
 
-          <div className="about__wrapper container">
+          <div id="about" className="about__wrapper container">
             <div className="about__main-image text-center col-6">
               <img width="100%" src={Galery}></img>
             </div>
@@ -115,6 +117,9 @@ export default function Home() {
                 </h5>
               </div>
             </div>
+          </div>
+          <div id="porfolio" className="profolio__wrapper container">
+            
           </div>
         </>
       )}

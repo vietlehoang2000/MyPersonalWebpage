@@ -64,10 +64,24 @@
   transform: scale(0.55);
   cursor: pointer;
 }
+.navbar-nav a {
+  margin: auto;
+  padding-right: 0.5rem;
+  padding-left: 0.5rem;
+  color: rgba(255, 255, 255, 0.55) !important;
+  font-size: 1.1rem !important;
+  font-weight: 500 !important;
+  cursor: pointer;
+  transition: color 0.3s linear ;
+  &:hover {
+    color: #a6352f !important;
+  }
+}
 
-.nav-link.active {
+.navbar-nav .active {
   text-decoration: underline;
   text-underline-position: under;
+  color: white !important;
 }
 
 .nav-link {
@@ -79,7 +93,7 @@
   color: #a6352f !important;
 }
 
-.navbar-nav .button--cv{
+.navbar-nav .button--cv {
   height: 40px;
 }
 
@@ -225,20 +239,20 @@
       color: #bbbbbb;
     }
   }
-  .main-text--right{
-    h5{
+  .main-text--right {
+    h5 {
       font-size: 20px;
       color: white;
       font-style: normal;
-      span{
+      span {
         font-size: 16px;
-        color: #BBBBBB;
+        color: #bbbbbb;
         font-style: italic;
       }
     }
   }
 }
-.button--cv{
+.button--cv {
   background-color: #a6352f !important;
   color: white !important;
   font-weight: bold !important;
@@ -247,9 +261,9 @@
   transition: 0.5s ease !important;
   height: 63px;
   border: none !important;
-  &:hover{
+  &:hover {
     background-color: white !important;
-  color: black !important;
+    color: black !important;
     cursor: pointer;
   }
 }
@@ -324,30 +338,26 @@
         color: #a6352f !important;
       }
     }
-    h5{
+    h5 {
       font-size: 1rem !important;
     }
   }
-
-  
-
-
 }
 
-@media only screen and (max-width: 575px){
+@media only screen and (max-width: 575px) {
   .about__main-text {
     text-align: center;
-    .main-text--left{
-      h3{
+    .main-text--left {
+      h3 {
         text-align: center;
       }
-      p{
+      p {
         text-align: center;
       }
-    } 
+    }
   }
 
-  .button--cv{
+  .button--cv {
     height: 43px;
     font-weight: medium !important;
   }
