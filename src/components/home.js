@@ -11,6 +11,9 @@ import Item from "./itemList";
 
 import Map from "./map";
 
+import Aos from "aos";
+import "aos/dist/aos.css"
+
 import {
   FaFacebookSquare,
   FaInstagramSquare,
@@ -41,6 +44,9 @@ export default function Home() {
     setPageStatus("running");
   }, 5000);
 
+  useEffect(()=>{
+    Aos.init({duration:2000})
+  },[])
   const [show, setShow] = useState(false);
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
@@ -87,8 +93,8 @@ export default function Home() {
             </div>
           </div>
 
-          <div id="about" className="about__wrapper container">
-            <div className="about__main-image text-center col-6">
+          <div id="about" data-aos="fade-up" className="about__wrapper container ">
+            <div  className="about__main-image text-center col-6">
               <img width="100%" src={Galery}></img>
             </div>
             <div className="about__main-text col-auto">
@@ -130,7 +136,7 @@ export default function Home() {
             </div>
           </div>
 
-          <div id="porfolio" className="porfolio__wrapper container mt-5">
+          <div data-aos="fade-right" id="porfolio" className="porfolio__wrapper container mt-5">
             <div className="porfolio-text">
               <h1 className="text--back-ground">Portfolio</h1>
               <h1 className="text-main">My works</h1>
@@ -184,7 +190,7 @@ export default function Home() {
             </div>
           </div>
 
-          <div id="contact" className="contact__wrapper container">
+          <div data-aos="fade-up" id="contact" className="contact__wrapper container">
             <div className="porfolio-text">
               <h1 className="text--back-ground">Get In Touch</h1>
               <h1 className="text-main">Contact</h1>

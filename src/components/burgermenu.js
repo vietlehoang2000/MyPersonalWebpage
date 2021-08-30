@@ -7,6 +7,9 @@ import {IoCloseSharp} from 'react-icons/io5'
 import Nav from 'react-bootstrap/Nav'
 import Button from "react-bootstrap/Button";
 
+import { Link, animateScroll as scroll } from "react-scroll";
+
+
 export default function BurgerMenu({ show, handleClose }) {
   return (
     <>
@@ -20,10 +23,18 @@ export default function BurgerMenu({ show, handleClose }) {
         </Offcanvas.Title>
         <Offcanvas.Body>
         <Nav className="burger__nav--link row">
-            <Nav.Link className="text-center" href="#home">Home</Nav.Link>
-            <Nav.Link className="text-center" href="#features">About</Nav.Link>
-            <Nav.Link className="text-center" href="#Porfolio">Porfolio</Nav.Link>
-            <Nav.Link className="text-center" href="#Contact">Contact</Nav.Link>
+        <Link to="home" spy={true}  offset={-100} isDynamic={true} >
+              Home
+            </Link>
+            <Link to="about" spy={true}  offset={-100} isDynamic={true}>
+              About
+            </Link>
+            <Link to="porfolio" spy={true}  offset={-100} isDynamic={true}>
+              Portfolio
+            </Link>
+            <Link to="contact" spy={true}  offset={-100} isDynamic={true}>
+            Contact
+            </Link>
             <Button className="button--cv col-4 mx-auto" size="sm">
                   My CV
             </Button>
