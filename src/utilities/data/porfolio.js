@@ -51,7 +51,7 @@ const PorfolioItems = [
   },
   {
     id: 6,
-    name: "student account management system",
+    name: "student accounts system",
     category: ["All", "JQuerry"],
     description: "a Jquerry project to study rest api calling request",
     image: Student,

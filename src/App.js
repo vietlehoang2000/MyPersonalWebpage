@@ -26,14 +26,18 @@ function App() {
           <Link to="home"  ><img class="imageSpinNav" src={Logo}></img></Link>
           </Navbar.Brand>
           <Nav>
-            <Link to="home" spy={true}  offset={-50} isDynamic={true} >
-              home
+            <Link to="home" spy={true}  offset={-100} isDynamic={true} >
+              Home
             </Link>
-            <Link to="about" spy={true}  offset={-50} isDynamic={true}>
+            <Link to="about" spy={true}  offset={-100} isDynamic={true}>
               About
             </Link>
-            <Nav.Link href="#Porfolio">Porfolio</Nav.Link>
-            <Nav.Link href="#Contact">Contact</Nav.Link>
+            <Link to="porfolio" spy={true}  offset={-100} isDynamic={true}>
+              Portfolio
+            </Link>
+            <Link to="contact" spy={true}  offset={-100} isDynamic={true}>
+            Contact
+            </Link>
             <Button className="button--cv" size="sm">
               My CV
             </Button>

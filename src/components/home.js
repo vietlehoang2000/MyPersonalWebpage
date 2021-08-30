@@ -1,3 +1,4 @@
+import React, { useRef, useEffect, useState } from "react";
 import Logo from "../utilities/image/Logo.svg";
 import Avatar from "../utilities/image/avatar.jpg";
 import Button from "react-bootstrap/Button";
@@ -7,6 +8,8 @@ import Galery from "../utilities/image/galery.png";
 import PorfolioItems from "../utilities/data/porfolio";
 
 import Item from "./itemList";
+
+import Map from "./map";
 
 import {
   FaFacebookSquare,
@@ -18,15 +21,13 @@ import {
 import "animate.css";
 
 import "../utilities/css/home.scss";
-import { useState, useRef } from "react";
 
 import BurgerMenu from "./burgermenu";
 
 export default function Home() {
+  const [workItems, setWorkItems] = useState(PorfolioItems);
 
-  const [workItems,setWorkItems] = useState(PorfolioItems);
-
-  const [category,setCategory] = useState("All")
+  const [category, setCategory] = useState("All");
 
   const [pageStatus, setPageStatus] = useState("loading");
 
@@ -131,27 +132,108 @@ export default function Home() {
 
           <div id="porfolio" className="porfolio__wrapper container mt-5">
             <div className="porfolio-text">
-              <h1 className="text--back-ground">Porfolio</h1>
+              <h1 className="text--back-ground">Portfolio</h1>
               <h1 className="text-main">My works</h1>
             </div>
             <div className="porfolio-category ">
               <ul className="d-flex justify-content-center">
-                <li className={category==="All"&&"active"} onClick={()=>setCategory("All")}>All</li>
-                <li className={category==="React"&&"active"} onClick={()=>setCategory("React")}>React</li>
-                <li className={category==="JQuerry"&&"active"} onClick={()=>setCategory("JQuerry")}>JQuerry</li>
-                <li className={category==="Vanilla"&&"active"} onClick={()=>setCategory("Vanilla")}>Vanilla</li>
-                <li className={category==="UI"&&"active"} onClick={()=>setCategory("UI")}>UI/UX</li>
+                <li
+                  className={category === "All" && "active"}
+                  onClick={() => setCategory("All")}
+                >
+                  All
+                </li>
+                <li
+                  className={category === "React" && "active"}
+                  onClick={() => setCategory("React")}
+                >
+                  React
+                </li>
+                <li
+                  className={category === "JQuerry" && "active"}
+                  onClick={() => setCategory("JQuerry")}
+                >
+                  JQuerry
+                </li>
+                <li
+                  className={category === "Vanilla" && "active"}
+                  onClick={() => setCategory("Vanilla")}
+                >
+                  Vanilla
+                </li>
+                <li
+                  className={category === "UI" && "active"}
+                  onClick={() => setCategory("UI")}
+                >
+                  UI/UX
+                </li>
               </ul>
             </div>
             <div className="items-list row">
-               {
-                 workItems.map(function(item){
-                   if(item.category.some((product) => product===category))
-                    {
-                      return <Item item={item} category={category} imageAnimation={imageAnimation}></Item>
-                    }
-                 })
-               }
+              {workItems.map(function (item) {
+                if (item.category.some((product) => product === category)) {
+                  return (
+                    <Item
+                      item={item}
+                      category={category}
+                      imageAnimation={imageAnimation}
+                    ></Item>
+                  );
+                }
+              })}
+            </div>
+          </div>
+
+          <div id="contact" className="contact__wrapper container">
+            <div className="porfolio-text">
+              <h1 className="text--back-ground">Get In Touch</h1>
+              <h1 className="text-main">Contact</h1>
+            </div>
+            <p className="col-8 col-lg-6">
+              Thanks for spending your time on my CV. Just one more step to talk
+              to me. My pleasure!
+            </p>
+            <div className="contact-main row d-flex flex-lg-row-reverse justify-content-center">
+              <div className="contact-main--right-block col-9 col-lg-6">
+                <Map></Map>
+              </div>
+              <div className="contact-main--left-block col-9 col-lg-6">
+                <div className="group-input name mt-5">
+                  <input type="text" required="required" />
+                  <label>Name</label>
+                </div>
+                <div className="group-input email mt-5">
+                  <input type="email" required="required" />
+                  <label>Email</label>
+                </div>
+                <div className="group-input message mt-5">
+                  <input type="Message" required="required" />
+                  <label>Message</label>
+                </div>
+                <Button className="mt-5 mx-auto button--cv col-sm-6" size="lg">
+                  Message Me
+                </Button>
+              </div>
+            </div>
+          </div>
+
+          <div className="footer">
+            <hr></hr>
+            <div className="footer-wrapper mx-auto container d-flex justify-content-between">
+              <img width="74px" height="53px" src={Logo}></img>
+              <div className="footer--adress">
+                <h4>numb 11, An Trach,<br></br> Dong Da, Hanoi</h4>
+              </div>
+              <div className="footer--contact">
+                <h4>vietlehoang2000@gmail.com</h4>
+                <h4>+81 972136868</h4>
+              </div>
+              <div className="footer--social-media">
+              <FaFacebookSquare className="media__logo"></FaFacebookSquare>
+                <FaInstagramSquare className="media__logo"></FaInstagramSquare>
+                <FaLinkedin className="media__logo"></FaLinkedin>
+                <FaGithubSquare className="media__logo"></FaGithubSquare>
+              </div>
             </div>
           </div>
         </>
