@@ -1,6 +1,8 @@
 import * as React from "react";
 import { useState } from "react";
 import ReactMapGL, {Marker} from "react-map-gl";
+import {AiOutlineHome} from 'react-icons/ai'
+
 
 export default function Map() {
   const [viewport, setViewport] = useState({
@@ -10,6 +12,8 @@ export default function Map() {
     longitude: 105.752,
     zoom: 14.55,
   });
+
+  const styleHomeIcon={fontSize:"30px",color:"white",cursor:"pointer"}
 
   return (
     <ReactMapGL
@@ -21,7 +25,7 @@ export default function Map() {
       }}
     >
         <Marker latitude={21.048} longitude={105.752} offsetLeft={-20} offsetTop={-10}>
-        <div>You are here</div>
+        <AiOutlineHome style={styleHomeIcon}></AiOutlineHome>
       </Marker>
     </ReactMapGL>
   );
