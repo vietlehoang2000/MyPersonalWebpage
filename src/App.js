@@ -11,7 +11,7 @@ import Logo from "./utilities/image/Logo.svg";
 
 import "bootstrap/dist/css/bootstrap.min.css";
 
-import { Link, animateScroll as scroll } from "react-scroll";
+import { Link } from "react-scroll";
 
 function App() {
   return (
@@ -23,7 +23,7 @@ function App() {
       >
         <Container>
           <Navbar.Brand href="">
-          <Link to="home"  ><img class="imageSpinNav" src={Logo}></img></Link>
+          <Link to="home"  ><img className="imageSpinNav" alt="logo" src={Logo}></img></Link>
           </Navbar.Brand>
           <Nav>
             <Link to="home" spy={true}  offset={-100} isDynamic={true} >

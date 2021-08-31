@@ -2,8 +2,15 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+
 }
 
+#myMap {
+  position:absolute; 
+  top:0; 
+  bottom:0; 
+  width:100%;
+}
 
 @keyframes spin {
   from {
@@ -379,6 +386,9 @@
 .mapboxgl-map{
   border-radius: 12px;
 }
+.contact-main--right-block{
+  min-height: 400px;
+}
 
 .contact-main--right-block>div{
   width: 100% !important;
@@ -584,6 +594,10 @@ figure.snip1328.hover figcaption p {
 
   .footer{
     display: none;
+  }
+
+  .contact-main{
+    padding-bottom: 50px;
   }
 }
 

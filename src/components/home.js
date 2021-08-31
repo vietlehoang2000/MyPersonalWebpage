@@ -1,4 +1,4 @@
-import React, { useRef, useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import Logo from "../utilities/image/Logo.svg";
 import Avatar from "../utilities/image/avatar.jpg";
 import Button from "react-bootstrap/Button";
@@ -12,7 +12,7 @@ import Item from "./itemList";
 import Map from "./map";
 
 import Aos from "aos";
-import "aos/dist/aos.css"
+import "aos/dist/aos.css";
 
 import {
   FaFacebookSquare,
@@ -28,7 +28,7 @@ import "../utilities/css/home.scss";
 import BurgerMenu from "./burgermenu";
 
 export default function Home() {
-  const [workItems, setWorkItems] = useState(PorfolioItems);
+  const workItems = PorfolioItems;
 
   const [category, setCategory] = useState("All");
 
@@ -44,9 +44,9 @@ export default function Home() {
     setPageStatus("running");
   }, 5000);
 
-  useEffect(()=>{
-    Aos.init({duration:2000})
-  },[])
+  useEffect(() => {
+    Aos.init({ duration: 2000 });
+  }, []);
   const [show, setShow] = useState(false);
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
@@ -55,21 +55,21 @@ export default function Home() {
     <div className="home container-fluid">
       {pageStatus === "loading" ? (
         <div className="home__wrapper">
-          <div class="logoPos">
-            <img class="imageSpin" src={Logo}></img>
+          <div className="logoPos">
+            <img className="imageSpin" src={Logo}></img>
           </div>
         </div>
       ) : (
         <>
           <div className="home__burger-menu text-end" onClick={handleShow}>
-            <img class="imageSpinNav" src={Logo}></img>
+            <img className="imageSpinNav" src={Logo}></img>
           </div>
           <BurgerMenu show={show} handleClose={handleClose}></BurgerMenu>
           <div
             id="home"
             className="home__wrapper row justify-content-center align-items-center"
           >
-            <div className="home__image col-12 col-sm-8 col-lg-5 text-lg-end text-center animate__animated animate__fadeIn">
+            <div className="home__image col-11 col-sm-8 col-lg-5 text-lg-end text-center animate__animated animate__fadeIn">
               <img
                 className={`img--avatar ${imageAnimation}`}
                 src={Avatar}
@@ -93,8 +93,12 @@ export default function Home() {
             </div>
           </div>
 
-          <div id="about" data-aos="fade-up" className="about__wrapper container ">
-            <div  className="about__main-image text-center col-10 col-sm-8 col-6">
+          <div
+            id="about"
+            data-aos="fade-up"
+            className="about__wrapper container "
+          >
+            <div className="about__main-image text-center col-10 col-sm-8 col-6">
               <img width="100%" src={Galery}></img>
             </div>
             <div className="about__main-text col-auto">
@@ -107,10 +111,11 @@ export default function Home() {
                   <span>H.</span> Viet Le
                 </h3>
                 <p>
-                  Hi, I am a front-end developer located in Ha Noi having a
-                  greate passionate in web developing and photography. I always
-                  want to create stunning UI/UX products satisfying my clients
-                  with outstanding Brand Identity
+                  Hi, I am a front-end developer located in Hanoi and I have a
+                  strong enthusiasm in web developing & photography. Therefore,
+                  to be part of creating extra-ordinary UI/UX products to
+                  emphasise on outstanding Brand Identity by virtue of
+                  customer’s satisfaction has always been a passion of mine.
                 </p>
                 <Button className="mt-3 mb-3 button--cv col-sm-6" size="lg">
                   Get My CV
@@ -136,7 +141,11 @@ export default function Home() {
             </div>
           </div>
 
-          <div data-aos="fade-right" id="porfolio" className="porfolio__wrapper container mt-5">
+          <div
+            data-aos="fade-right"
+            id="porfolio"
+            className="porfolio__wrapper container mt-5"
+          >
             <div className="porfolio-text">
               <h1 className="text--back-ground">Portfolio</h1>
               <h1 className="text-main">My works</h1>
@@ -176,13 +185,14 @@ export default function Home() {
               </ul>
             </div>
             <div className="items-list row">
-              {workItems.map(function (item) {
+              {workItems.map(function (item, index) {
                 if (item.category.some((product) => product === category)) {
                   return (
                     <Item
                       item={item}
                       category={category}
                       imageAnimation={imageAnimation}
+                      key={item.id}
                     ></Item>
                   );
                 }
@@ -190,7 +200,11 @@ export default function Home() {
             </div>
           </div>
 
-          <div data-aos="fade-up" id="contact" className="contact__wrapper container">
+          <div
+            data-aos="fade-up"
+            id="contact"
+            className="contact__wrapper container "
+          >
             <div className="porfolio-text">
               <h1 className="text--back-ground">Get In Touch</h1>
               <h1 className="text-main">Contact</h1>
@@ -199,7 +213,7 @@ export default function Home() {
               Thanks for spending your time on my CV. Just one more step to talk
               to me. My pleasure!
             </p>
-            <div className="contact-main row d-flex flex-lg-row-reverse justify-content-center">
+            <div className="contact-main row d-flex flex-lg-row-reverse justify-content-center pb-md-2">
               <div className="contact-main--right-block col-9 col-lg-6">
                 <Map></Map>
               </div>
@@ -228,14 +242,16 @@ export default function Home() {
             <div className="footer-wrapper mx-auto container d-flex justify-content-between">
               <img width="74px" height="53px" src={Logo}></img>
               <div className="footer--adress">
-                <h4>numb 11, An Trach,<br></br> Dong Da, Hanoi</h4>
+                <h4>
+                  numb 11, An Trach,<br></br> Dong Da, Hanoi
+                </h4>
               </div>
               <div className="footer--contact">
                 <h4>vietlehoang2000@gmail.com</h4>
                 <h4>+81 972136868</h4>
               </div>
               <div className="footer--social-media">
-              <FaFacebookSquare className="media__logo"></FaFacebookSquare>
+                <FaFacebookSquare className="media__logo"></FaFacebookSquare>
                 <FaInstagramSquare className="media__logo"></FaInstagramSquare>
                 <FaLinkedin className="media__logo"></FaLinkedin>
                 <FaGithubSquare className="media__logo"></FaGithubSquare>

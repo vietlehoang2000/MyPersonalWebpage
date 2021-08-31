@@ -7,7 +7,7 @@ import {IoCloseSharp} from 'react-icons/io5'
 import Nav from 'react-bootstrap/Nav'
 import Button from "react-bootstrap/Button";
 
-import { Link, animateScroll as scroll } from "react-scroll";
+import { Link } from "react-scroll";
 
 
 export default function BurgerMenu({ show, handleClose }) {
@@ -19,7 +19,7 @@ export default function BurgerMenu({ show, handleClose }) {
         </div>
         <div className="burger__nav">
         <Offcanvas.Title className="text-center">
-          <img class="imageSpinNav" src={Logo}></img>
+          <img alt="logo" className="imageSpinNav" src={Logo}></img>
         </Offcanvas.Title>
         <Offcanvas.Body>
         <Nav className="burger__nav--link row">
