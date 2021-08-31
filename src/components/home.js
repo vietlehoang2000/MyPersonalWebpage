@@ -69,7 +69,7 @@ export default function Home() {
             id="home"
             className="home__wrapper row justify-content-center align-items-center"
           >
-            <div className="home__image col-10 col-sm-7 col-lg-5 text-lg-end text-center animate__animated animate__fadeIn">
+            <div className="home__image col-12 col-sm-8 col-lg-5 text-lg-end text-center animate__animated animate__fadeIn">
               <img
                 className={`img--avatar ${imageAnimation}`}
                 src={Avatar}
@@ -94,7 +94,7 @@ export default function Home() {
           </div>
 
           <div id="about" data-aos="fade-up" className="about__wrapper container ">
-            <div  className="about__main-image text-center col-6">
+            <div  className="about__main-image text-center col-10 col-sm-8 col-6">
               <img width="100%" src={Galery}></img>
             </div>
             <div className="about__main-text col-auto">
