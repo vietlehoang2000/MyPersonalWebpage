@@ -22,6 +22,17 @@
   }
 }
 
+@keyframes spinPhone {
+  from {
+    transform: rotateY(0deg) scale(0.85);
+  }
+  to {
+    transform: rotateY(360deg) scale(0.45);
+    opacity: 0;
+  }
+}
+
+
 @keyframes spinNav {
   from {
     transform: rotateY(0deg) scale(0.55);
@@ -215,6 +226,31 @@
   max-width: 468px;
   margin: auto;
 }
+.phone{
+ text-decoration: none;
+ span{
+   &:hover{ 
+     color: #a6352f !important;}
+ }
+ h4{
+  &:hover{ 
+    color: #a6352f !important;}
+ }
+}
+
+.mail{
+  text-decoration: none;
+ span{
+   &:hover{ 
+     color: #a6352f !important;}
+ }
+ h4{
+  &:hover{ 
+    color: #a6352f !important;}
+ }
+}
+
+
 
 .about__wrapper .text--main {
   text-transform: uppercase;
@@ -229,8 +265,8 @@
   .text--back-ground {
     position: absolute;
     font-size: calc(1.375rem + 1 * 1.5vw) !important;
-    left: 42%;
-    top: -33%;
+    left: 43%;
+    top: -39%;
   }
 }
 
@@ -294,6 +330,7 @@
   .text--back-ground{
     top:-50%;
     font-size: calc(1.375rem + 3 * 2vw) !important;
+   
   }
   .text-main{
     z-index: 1;
@@ -392,6 +429,12 @@
 
 .contact-main--right-block>div{
   width: 100% !important;
+}
+
+.alert{
+  border-radius: 12px !important;
+  margin-top: 10px;
+  margin-bottom: unset;
 }
 
 //style for item
@@ -602,6 +645,11 @@ figure.snip1328.hover figcaption p {
 }
 
 @media only screen and (max-width: 575px) {
+
+  .imageSpin {
+    animation: spinPhone 6s forwards;
+  }
+
   .nav--home {
     display: none !important;
   }
@@ -627,7 +675,11 @@ figure.snip1328.hover figcaption p {
         width: 80%;
       }
     }
+    .text--back-ground {
+      left: 32%;
+    }
   }
+
 
   .button--cv {
     height: 43px;
@@ -640,4 +692,13 @@ figure.snip1328.hover figcaption p {
     }
   }
 
+  .porfolio-text {
+  .text-main{
+    text-align: center ;
+  }
+  .text--back-ground{
+    left: 10%;
+    font-size: calc(1.175rem + 3 * 2vw) !important;
+  }
+  }
 }

@@ -40,8 +40,8 @@ export default function BurgerMenu({ show, handleClose }) {
             </Button>
           </Nav>
         <h5 className="text-center mt-3">©2021 Vivian</h5>
-        <h5 className="text-center">+81 0972136868</h5>
-        <h5 className="text-center">vietlehoang2000@gmail.com</h5>
+        <a className="phone" href="tel:+81972136868"><h5 className="text-center">+81 0972136868</h5></a>
+        <a className="mail" href="mailto:vitll474@gmail.com"><h5 className="text-center">vietlehoang2000@gmail.com</h5></a>
         </Offcanvas.Body>
         </div>
       </Offcanvas>

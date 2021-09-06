@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import Logo from "../utilities/image/Logo.svg";
 import Avatar from "../utilities/image/avatar.jpg";
 import Button from "react-bootstrap/Button";
+import Alert from "react-bootstrap/Alert";
 
 import Galery from "../utilities/image/galery.png";
 
@@ -13,6 +14,8 @@ import Map from "./map";
 
 import Aos from "aos";
 import "aos/dist/aos.css";
+
+import emailjs from "emailjs-com";
 
 import {
   FaFacebookSquare,
@@ -36,6 +39,30 @@ export default function Home() {
 
   const [imageAnimation, setImageAnimation] = useState("");
 
+  const [showAlert, setShowAlert] = useState('');
+
+  function sendEmail(e) {
+    e.preventDefault();
+    emailjs
+      .sendForm(
+        "service_3ajhow6",
+        "template_1zqvd01",
+        e.target,
+        "user_c4tjVaTONsGqWptiuOAK4"
+      )
+      .then(
+        (result) => {
+          setShowAlert('success')
+          console.log(result.text);
+        },
+        (error) => {
+          setShowAlert('danger')
+          console.log(error.text);
+        }
+      );
+    e.target.reset();
+  }
+
   setTimeout(function () {
     setImageAnimation("animate");
   }, 6000);
@@ -47,7 +74,9 @@ export default function Home() {
   useEffect(() => {
     Aos.init({ duration: 2000 });
   }, []);
+
   const [show, setShow] = useState(false);
+  
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
 
@@ -56,13 +85,16 @@ export default function Home() {
       {pageStatus === "loading" ? (
         <div className="home__wrapper">
           <div className="logoPos">
-            <img className="imageSpin" src={Logo}></img>
+            <img alt="spinning logo" className="imageSpin" src={Logo}></img>
           </div>
         </div>
       ) : (
         <>
-          <div className="home__burger-menu text-end" onClick={handleShow}>
-            <img className="imageSpinNav" src={Logo}></img>
+          <div
+            className="home__burger-menu text-end animate__animated animate__fadeIn"
+            onClick={handleShow}
+          >
+            <img alt="spinning logo" className="imageSpinNav" src={Logo}></img>
           </div>
           <BurgerMenu show={show} handleClose={handleClose}></BurgerMenu>
           <div
@@ -71,6 +103,7 @@ export default function Home() {
           >
             <div className="home__image col-11 col-sm-8 col-lg-5 text-lg-end text-center animate__animated animate__fadeIn">
               <img
+              alt="avatar-main"
                 className={`img--avatar ${imageAnimation}`}
                 src={Avatar}
               ></img>
@@ -85,10 +118,18 @@ export default function Home() {
                 Ha Noi city
               </h5>
               <div className="social__media-logo">
-                <FaFacebookSquare className="media__logo"></FaFacebookSquare>
-                <FaInstagramSquare className="media__logo"></FaInstagramSquare>
-                <FaLinkedin className="media__logo"></FaLinkedin>
-                <FaGithubSquare className="media__logo"></FaGithubSquare>
+                <a href="http://facebook.com/le.viet.5680" target="_blank" rel="noreferrer">
+                  <FaFacebookSquare className="media__logo"></FaFacebookSquare>
+                </a>
+                <a href="https://www.instagram.com/h.vietle/" target="_blank" rel="noreferrer">
+                  <FaInstagramSquare className="media__logo"></FaInstagramSquare>
+                </a>
+                <a href="http://facebook.com/le.viet.5680" target="_blank" rel="noreferrer">
+                  <FaLinkedin className="media__logo"></FaLinkedin>
+                </a>
+                <a href="https://github.com/vietlehoang2000" target="_blank" rel="noreferrer">
+                  <FaGithubSquare className="media__logo"></FaGithubSquare>
+                </a>
               </div>
             </div>
           </div>
@@ -98,8 +139,8 @@ export default function Home() {
             data-aos="fade-up"
             className="about__wrapper container "
           >
-            <div className="about__main-image text-center col-10 col-sm-8 col-6">
-              <img width="100%" src={Galery}></img>
+            <div className="about__main-image text-center col-9 col-sm-8 col-6">
+              <img alt="main-about-pic" width="100%" src={Galery}></img>
             </div>
             <div className="about__main-text col-auto">
               <h1 className="text--back-ground">ABOUT</h1>
@@ -129,13 +170,19 @@ export default function Home() {
                   Study: <span>swinburne uni</span>
                 </h5>
                 <h5>
-                  Phone: <span>+81 972136868</span>
+                  Phone:{" "}
+                  <a className="phone" href="tel:+81972136868">
+                    <span>+81 972136868</span>
+                  </a>
                 </h5>
                 <h5>
                   Adress: <span>Dong Da, Ha Noi</span>
                 </h5>
                 <h5>
-                  Email: <span>vietlehoang2000@gmail.com</span>
+                  Email:{" "}
+                  <a className="mail" href="mailto:vitll474@gmail.com">
+                    <span>vietlehoang2000@gmail.com</span>
+                  </a>
                 </h5>
               </div>
             </div>
@@ -153,31 +200,31 @@ export default function Home() {
             <div className="porfolio-category ">
               <ul className="d-flex justify-content-center">
                 <li
-                  className={category === "All" && "active"}
+                  className={`li ${category === "All" && "active"}`}
                   onClick={() => setCategory("All")}
                 >
                   All
                 </li>
                 <li
-                  className={category === "React" && "active"}
+                  className={`li ${category === "React" && "active"}`}
                   onClick={() => setCategory("React")}
                 >
                   React
                 </li>
                 <li
-                  className={category === "JQuerry" && "active"}
+                  className={`li ${category === "JQuerry" && "active"}`}
                   onClick={() => setCategory("JQuerry")}
                 >
                   JQuerry
                 </li>
                 <li
-                  className={category === "Vanilla" && "active"}
+                  className={`li ${category === "Vanilla" && "active"}`}
                   onClick={() => setCategory("Vanilla")}
                 >
                   Vanilla
                 </li>
                 <li
-                  className={category === "UI" && "active"}
+                  className={`li ${category === "UI" && "active"}`}
                   onClick={() => setCategory("UI")}
                 >
                   UI/UX
@@ -196,6 +243,7 @@ export default function Home() {
                     ></Item>
                   );
                 }
+                return null;
               })}
             </div>
           </div>
@@ -213,26 +261,43 @@ export default function Home() {
               Thanks for spending your time on my CV. Just one more step to talk
               to me. My pleasure!
             </p>
+
             <div className="contact-main row d-flex flex-lg-row-reverse justify-content-center pb-md-2">
               <div className="contact-main--right-block col-9 col-lg-6">
                 <Map></Map>
               </div>
               <div className="contact-main--left-block col-9 col-lg-6">
-                <div className="group-input name mt-5">
-                  <input type="text" required="required" />
-                  <label>Name</label>
-                </div>
-                <div className="group-input email mt-5">
-                  <input type="email" required="required" />
-                  <label>Email</label>
-                </div>
-                <div className="group-input message mt-5">
-                  <input type="Message" required="required" />
-                  <label>Message</label>
-                </div>
-                <Button className="mt-5 mx-auto button--cv col-sm-6" size="lg">
-                  Message Me
-                </Button>
+                <form onSubmit={sendEmail}>
+                  <div className="group-input name mt-5">
+                    <input type="text" required="required" name="from_name" />
+                    <label>Name</label>
+                  </div>
+                  <div className="group-input email mt-5">
+                    <input type="email" required="required" name="from_mail" />
+                    <label>Email</label>
+                  </div>
+                  <div className="group-input message mt-5">
+                    <input type="Message" required="required" name="message" />
+                    <label>Message</label>
+                  </div>
+
+                  {showAlert!==""&&(<Alert
+                    variant={showAlert}
+                    onClose={() => setShowAlert('')}
+                    dismissible
+                  >
+                    {showAlert==="success"?(<Alert.Heading>Thanks for contacting me!</Alert.Heading>):(<Alert.Heading>Sorry, there are some issues sending your mail</Alert.Heading>)}
+                    
+                  </Alert>)}
+                  
+                  <Button
+                    type="submit"
+                    className="mt-5 mx-auto button--cv col-sm-6"
+                    size="lg"
+                  >
+                    Message Me
+                  </Button>
+                </form>
               </div>
             </div>
           </div>
@@ -240,21 +305,33 @@ export default function Home() {
           <div className="footer">
             <hr></hr>
             <div className="footer-wrapper mx-auto container d-flex justify-content-between">
-              <img width="74px" height="53px" src={Logo}></img>
+              <img alt="logo" width="54px" height="33px" src={Logo}></img>
               <div className="footer--adress">
                 <h4>
                   numb 11, An Trach,<br></br> Dong Da, Hanoi
                 </h4>
               </div>
               <div className="footer--contact">
-                <h4>vietlehoang2000@gmail.com</h4>
-                <h4>+81 972136868</h4>
+                <a className="mail" href="mailto:vitll474@gmail.com">
+                  <h4>vietlehoang2000@gmail.com</h4>
+                </a>
+                <a className="phone" href="tel:+81972136868">
+                  <h4>+81 972136868</h4>
+                </a>
               </div>
               <div className="footer--social-media">
-                <FaFacebookSquare className="media__logo"></FaFacebookSquare>
-                <FaInstagramSquare className="media__logo"></FaInstagramSquare>
-                <FaLinkedin className="media__logo"></FaLinkedin>
-                <FaGithubSquare className="media__logo"></FaGithubSquare>
+                <a href="http://facebook.com/le.viet.5680" target="_blank" rel="noreferrer">
+                  <FaFacebookSquare className="media__logo"></FaFacebookSquare>
+                </a>
+                <a href="https://www.instagram.com/h.vietle/" target="_blank" rel="noreferrer">
+                  <FaInstagramSquare className="media__logo"></FaInstagramSquare>
+                </a>
+                <a href="http://facebook.com/le.viet.5680" target="_blank" rel="noreferrer">
+                  <FaLinkedin className="media__logo"></FaLinkedin>
+                </a>
+                <a href="https://github.com/vietlehoang2000" target="_blank" rel="noreferrer">
+                  <FaGithubSquare className="media__logo"></FaGithubSquare>
+                </a>
               </div>
             </div>
           </div>

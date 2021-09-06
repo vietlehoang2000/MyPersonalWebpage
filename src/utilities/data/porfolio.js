@@ -1,5 +1,3 @@
-import React from "react";
-
 import Apple from "../image/apple.png";
 import Coca from "../image/coca.png";
 import Game from "../image/game.png";
@@ -13,7 +11,6 @@ const PorfolioItems = [
     name: "apple product lists",
     category: ["All", "React"],
     description: "a react project to demonstrate shopping web page",
-    link: "https://react-apple-product-page.herokuapp.com",
     image: Apple,
     link:"https://react-apple-product-page.herokuapp.com/"
   },
