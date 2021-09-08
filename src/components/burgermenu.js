@@ -9,6 +9,7 @@ import Button from "react-bootstrap/Button";
 
 import { Link } from "react-scroll";
 
+import CV from '../utilities/CV/CV.pdf'
 
 export default function BurgerMenu({ show, handleClose }) {
   return (
@@ -35,9 +36,9 @@ export default function BurgerMenu({ show, handleClose }) {
             <Link to="contact" spy={true}  offset={-100} isDynamic={true}>
             Contact
             </Link>
-            <Button className="button--cv col-4 mx-auto" size="sm">
+            <a href={CV} download="Le-Hoang-Viet-CV"><Button onClick={()=> window.open("https://www.topcv.vn/xem-cv/XANeV1UCBgMGBgcGVAVWV1xRDQECUQlUDFNWAA2ae7?utm_source=link_i_topcv&utm_campaign=link_i_topcv&utm_medium=link_i_topcv")} className="button--cv col-4 mx-auto" size="sm">
                   My CV
-            </Button>
+            </Button></a>
           </Nav>
         <h5 className="text-center mt-3">©2021 Vivian</h5>
         <a className="phone" href="tel:+81972136868"><h5 className="text-center">+81 0972136868</h5></a>

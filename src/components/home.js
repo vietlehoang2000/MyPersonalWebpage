@@ -6,6 +6,8 @@ import Alert from "react-bootstrap/Alert";
 
 import Galery from "../utilities/image/galery.png";
 
+import CV from "../utilities/CV/CV.pdf"
+
 import PorfolioItems from "../utilities/data/porfolio";
 
 import Item from "./itemList";
@@ -40,6 +42,10 @@ export default function Home() {
   const [imageAnimation, setImageAnimation] = useState("");
 
   const [showAlert, setShowAlert] = useState('');
+
+  function downloadCV(){
+    window.open("https://www.topcv.vn/xem-cv/XANeV1UCBgMGBgcGVAVWV1xRDQECUQlUDFNWAA2ae7?utm_source=link_i_topcv&utm_campaign=link_i_topcv&utm_medium=link_i_topcv");
+  }
 
   function sendEmail(e) {
     e.preventDefault();
@@ -158,9 +164,9 @@ export default function Home() {
                   emphasise on outstanding Brand Identity by virtue of
                   customer’s satisfaction has always been a passion of mine.
                 </p>
-                <Button className="mt-3 mb-3 button--cv col-sm-6" size="lg">
+                <a href={CV} download="Le-Hoang-Viet-CV"><Button onClick={()=>downloadCV()} className="mt-3 mb-3 button--cv col-sm-6" size="lg">
                   Get My CV
-                </Button>
+                </Button></a>
               </div>
               <div className="main-text--right col-sm-6 col-lg-5">
                 <h5>

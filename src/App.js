@@ -13,6 +13,8 @@ import "bootstrap/dist/css/bootstrap.min.css";
 
 import { Link } from "react-scroll";
 
+import CV from './utilities/CV/CV.pdf'
+
 function App() {
   return (
     <>
@@ -38,9 +40,9 @@ function App() {
             <Link to="contact" spy={true}  offset={-100} isDynamic={true}>
             Contact
             </Link>
-            <Button className="button--cv" size="sm">
+            <a href={CV} download="Le-Hoang-Viet-CV"><Button className="button--cv" size="sm">
               My CV
-            </Button>
+            </Button></a>
           </Nav>
         </Container>
       </Navbar>
