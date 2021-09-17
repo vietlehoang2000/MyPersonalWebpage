@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import Logo from "../utilities/image/Logo.svg";
+import LogoWhite from "../utilities/image/logo-white.svg"
 import Avatar from "../utilities/image/avatar.jpg";
 import Button from "react-bootstrap/Button";
 import Alert from "react-bootstrap/Alert";
@@ -32,7 +33,8 @@ import "../utilities/css/home.scss";
 
 import BurgerMenu from "./burgermenu";
 
-export default function Home() {
+export default function Home({theme}) {
+
   const workItems = PorfolioItems;
 
   const [category, setCategory] = useState("All");
@@ -42,6 +44,13 @@ export default function Home() {
   const [imageAnimation, setImageAnimation] = useState("");
 
   const [showAlert, setShowAlert] = useState('');
+
+  const [show, setShow] = useState(false);
+  
+  const handleClose = () => setShow(false);
+  const handleShow = () => setShow(true);
+
+ 
 
   function downloadCV(){
     window.open("https://www.topcv.vn/xem-cv/XANeV1UCBgMGBgcGVAVWV1xRDQECUQlUDFNWAA2ae7?utm_source=link_i_topcv&utm_campaign=link_i_topcv&utm_medium=link_i_topcv");
@@ -81,17 +90,14 @@ export default function Home() {
     Aos.init({ duration: 2000 });
   }, []);
 
-  const [show, setShow] = useState(false);
-  
-  const handleClose = () => setShow(false);
-  const handleShow = () => setShow(true);
+ 
 
   return (
-    <div className="home container-fluid">
+    <div data-theme={theme} className="home container-fluid theme-white">
       {pageStatus === "loading" ? (
         <div className="home__wrapper">
           <div className="logoPos">
-            <img alt="spinning logo" className="imageSpin" src={Logo}></img>
+            <img alt="spinning logo" className="imageSpin" src={theme==="dark"?Logo:LogoWhite}></img>
           </div>
         </div>
       ) : (
@@ -100,7 +106,7 @@ export default function Home() {
             className="home__burger-menu text-end animate__animated animate__fadeIn"
             onClick={handleShow}
           >
-            <img alt="spinning logo" className="imageSpinNav" src={Logo}></img>
+            <img alt="spinning logo" className="imageSpinNav" src={theme==="dark"?Logo:LogoWhite}></img>
           </div>
           <BurgerMenu show={show} handleClose={handleClose}></BurgerMenu>
           <div
@@ -311,7 +317,7 @@ export default function Home() {
           <div className="footer">
             <hr></hr>
             <div className="footer-wrapper mx-auto container d-flex justify-content-between">
-              <img alt="logo" width="54px" height="33px" src={Logo}></img>
+              <img alt="logo" width="54px" height="33px" src={theme==="light"?LogoWhite:Logo}></img>
               <div className="footer--adress">
                 <h4>
                   numb 11, An Trach,<br></br> Dong Da, Hanoi
