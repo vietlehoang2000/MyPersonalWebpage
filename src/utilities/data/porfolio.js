@@ -12,7 +12,7 @@ const PorfolioItems = [
     category: ['All', 'React'],
     description: 'a react project to demonstrate shopping web page',
     image: Apple,
-    link: 'https://apple-product-vietlehoang2000.netlify.app/',
+    link: 'http://localhost:3000/components/authentication/Authenticate',
   },
   {
     id: 2,
