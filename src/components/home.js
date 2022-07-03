@@ -5,7 +5,7 @@ import Avatar from '../utilities/image/avatar.jpg';
 import Button from 'react-bootstrap/Button';
 import Alert from 'react-bootstrap/Alert';
 
-import Galery from '../utilities/image/galery.png';
+import Galery from '../utilities/image/avatarSitting.jpg';
 
 import CV from '../utilities/CV/CV.pdf';
 
@@ -42,6 +42,7 @@ export default function Home({ theme }) {
 
   const [imageAnimation, setImageAnimation] = useState('');
 
+
   const [showAlert, setShowAlert] = useState('');
 
   const [show, setShow] = useState(false);
@@ -50,7 +51,7 @@ export default function Home({ theme }) {
   const handleShow = () => setShow(true);
 
   function downloadCV() {
-    // window.open("https://www.topcv.vn/xem-cv/XANeV1UCBgMGBgcGVAVWV1xRDQECUQlUDFNWAA2ae7?utm_source=link_i_topcv&utm_campaign=link_i_topcv&utm_medium=link_i_topcv");
+    window.open("https://www.topcv.vn/xem-cv/XANeV1UCBgMGBgcGVAVWV1xRDQECUQlUDFNWAA2ae7?utm_source=link_i_topcv&utm_campaign=link_i_topcv&utm_medium=link_i_topcv");
   }
 
   function sendEmail(e) {
@@ -65,11 +66,9 @@ export default function Home({ theme }) {
       .then(
         (result) => {
           setShowAlert('success');
-          console.log(result.text);
         },
         (error) => {
           setShowAlert('danger');
-          console.log(error.text);
         }
       );
     e.target.reset();
@@ -126,11 +125,11 @@ export default function Home({ theme }) {
             <div className='home__text col-10 col-sm-7  col-lg-5 animate__animated animate__fadeIn'>
               <h1 className='text--back-ground'>Home</h1>
               <h1 className='text--main'>
-                <span>Vivian</span> Le
+                <span>Vincent</span> Le
               </h1>
               <h5>
                 Passionate web developer living in a little charming corner at
-                Ha Noi city
+                Melbourne city
               </h5>
               <div className='social__media-logo'>
                 <a
@@ -148,7 +147,7 @@ export default function Home({ theme }) {
                   <FaInstagramSquare className='media__logo'></FaInstagramSquare>
                 </a>
                 <a
-                  href='http://facebook.com/le.viet.5680'
+                  href='https://www.linkedin.com/in/vincent-le-5941b4205'
                   target='_blank'
                   rel='noreferrer'
                 >
@@ -180,11 +179,11 @@ export default function Home({ theme }) {
             <div className='about__main-text row justify-content-between'>
               <div className='main-text--left col-sm-6  col-lg-5'>
                 <h3>
-                  <span>H.</span> Viet Le
+                  <span>H.</span> Vincent Le
                 </h3>
                 <p>
                   Hi, I am a front-end developer located in Hanoi and I have a
-                  strong enthusiasm in web developing & photography. Therefore,
+                  strong enthusiasm in software & web developing. Therefore,
                   to be part of creating extra-ordinary UI/UX products to
                   emphasise on outstanding Brand Identity by virtue of
                   customer’s satisfaction has always been a passion of mine.
@@ -208,12 +207,12 @@ export default function Home({ theme }) {
                 </h5>
                 <h5>
                   Phone:{' '}
-                  <a className='phone' href='tel:+81972136868'>
-                    <span>+81 972136868</span>
+                  <a className='phone' href='tel:+61202213665'>
+                    <span>+61 202213665</span>
                   </a>
                 </h5>
                 <h5>
-                  Adress: <span>Dong Da, Ha Noi</span>
+                  Adress: <span>Kew, Melbourne</span>
                 </h5>
                 <h5>
                   Email:{' '}
@@ -249,6 +248,12 @@ export default function Home({ theme }) {
                   React
                 </li>
                 <li
+                  className={`li ${category === 'Wordpress' && 'active'}`}
+                  onClick={() => setCategory('Wordpress')}
+                >
+                  Wordpress
+                </li>
+                <li
                   className={`li ${category === 'JQuerry' && 'active'}`}
                   onClick={() => setCategory('JQuerry')}
                 >
@@ -270,17 +275,14 @@ export default function Home({ theme }) {
             </div>
             <div className='items-list row'>
               {workItems.map(function (item, index) {
-                if (item.category.some((product) => product === category)) {
+                if (item.category.find((itemCategory) => itemCategory === category)) {
                   return (
                     <Item
                       item={item}
-                      category={category}
-                      imageAnimation={imageAnimation}
                       key={item.id}
                     ></Item>
                   );
                 }
-                return null;
               })}
             </div>
           </div>
@@ -357,15 +359,15 @@ export default function Home({ theme }) {
               ></img>
               <div className='footer--adress'>
                 <h4>
-                  numb 11, An Trach,<br></br> Dong Da, Hanoi
+                  20 Malmsbury street<br></br> Kew, Vic
                 </h4>
               </div>
               <div className='footer--contact'>
                 <a className='mail' href='mailto:vitll474@gmail.com'>
                   <h4>vietlehoang2000@gmail.com</h4>
                 </a>
-                <a className='phone' href='tel:+81972136868'>
-                  <h4>+81 972136868</h4>
+                <a className='phone' href='tel:+61202213665'>
+                  <h4>+61 2 0221 3665</h4>
                 </a>
               </div>
               <div className='footer--social-media'>
@@ -384,7 +386,7 @@ export default function Home({ theme }) {
                   <FaInstagramSquare className='media__logo'></FaInstagramSquare>
                 </a>
                 <a
-                  href='http://facebook.com/le.viet.5680'
+                  href='https://www.linkedin.com/in/vincent-le-5941b4205'
                   target='_blank'
                   rel='noreferrer'
                 >

@@ -68,8 +68,8 @@ function App() {
             <Link to='contact' spy={true} offset={-100} isDynamic={true}>
               Contact
             </Link>
-            <a download='Le-Hoang-Viet-CV'>
-              <Button className='button--cv' size='sm'>
+            <a href={CV} download="Le-Hoang-Viet-CV">
+              <Button className="button--cv" size="sm">
                 My CV
               </Button>
             </a>

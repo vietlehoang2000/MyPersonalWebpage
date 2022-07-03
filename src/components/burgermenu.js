@@ -36,14 +36,13 @@ export default function BurgerMenu({ show, handleClose }) {
               <Link to='contact' spy={true} offset={-100} isDynamic={true}>
                 Contact
               </Link>
-              {/* <a download='Le-Hoang-Viet-CV'> */}
-              <a>
+              <a href={CV} download="Le-Hoang-Viet-CV">
                 <Button
-                  // onClick={() =>
-                  //   window.open(
-                  //     'https://www.topcv.vn/xem-cv/XANeV1UCBgMGBgcGVAVWV1xRDQECUQlUDFNWAA2ae7?utm_source=link_i_topcv&utm_campaign=link_i_topcv&utm_medium=link_i_topcv'
-                  //   )
-                  // }
+                  onClick={() =>
+                    window.open(
+                      'https://www.topcv.vn/xem-cv/XANeV1UCBgMGBgcGVAVWV1xRDQECUQlUDFNWAA2ae7?utm_source=link_i_topcv&utm_campaign=link_i_topcv&utm_medium=link_i_topcv'
+                    )
+                  }
                   className='button--cv col-4 mx-auto'
                   size='sm'
                 >

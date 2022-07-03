@@ -11,8 +11,8 @@ export default function Map() {
   const [viewport, setViewport] = useState({
     width: "100%",
     height: "80%",
-    latitude: 21.048,
-    longitude: 105.752,
+    latitude: -37.802610,
+    longitude: 145.033260,
     zoom: 14.55,
   });
 
@@ -31,8 +31,8 @@ export default function Map() {
       }}
     >
       <Marker
-        latitude={21.048}
-        longitude={105.752}
+        latitude={-37.802610}
+        longitude={145.033260}
         offsetLeft={-20}
         offsetTop={-10}
       >
@@ -43,14 +43,14 @@ export default function Map() {
       </Marker>
       {selectedHome && (
         <Popup
-          latitude={21.048}
-          longitude={105.752}
+          latitude={-37.802610}
+          longitude={145.033260}
           offsetLeft={-20}
           offsetTop={-10}
           onClose={()=>setSelectedHome(null)}
         >
-          <h4 className="text-center">My Sweet Home</h4>
-          Lô 30E , Khu đấu giá 3ha, Bắc Từ Liêm, Hà Nội, Việt Nam
+          <h4 className="text-center">My Home</h4>
+          20 Malmsbury Street, Kew, Vic
         </Popup>
       )}
     </ReactMapGL>
