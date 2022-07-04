@@ -208,7 +208,7 @@ export default function Home({ theme }) {
                 <h5>
                   Phone:{' '}
                   <a className='phone' href='tel:+61202213665'>
-                    <span>+61 202213665</span>
+                    <span>+61 432537314</span>
                   </a>
                 </h5>
                 <h5>
@@ -367,7 +367,7 @@ export default function Home({ theme }) {
                   <h4>vietlehoang2000@gmail.com</h4>
                 </a>
                 <a className='phone' href='tel:+61202213665'>
-                  <h4>+61 2 0221 3665</h4>
+                  <h4>+61 432537314</h4>
                 </a>
               </div>
               <div className='footer--social-media'>
