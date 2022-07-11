@@ -62,7 +62,7 @@ const DetailPost = ({theme, changeTheme})=>{
           </Nav>
         </Container>
       </Navbar>
-      <div className='container-fluid detailPost__wrapper d-flex justify-content-start'>
+      <div className='container-fluid detailPost__wrapper d-flex justify-content-center'>
         <div className='imagesShow col-6 me-4'>
           <ImageShow postDetail={postDetail}/>
         </div>
