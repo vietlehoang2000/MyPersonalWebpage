@@ -1,0 +1,15 @@
+body {
+	margin: 0;
+	font-family: "Montserrat", sans-serif !important;
+	overflow-x: hidden;
+}
+[data-theme="dark"] {
+	--bg: black;
+}
+[data-theme="light"] {
+	--bg: #f8f8f8;
+}
+
+#root {
+	background-color: var(--bg);
+}
