@@ -12,29 +12,29 @@ import Button from 'react-bootstrap/Button';
 import '../../utilities/css/detailPost.scss';
 import ImageShow from './imageShow';
 import postItems from '../../utilities/data/porfolio'
-const DetailPost = ({theme, changeTheme})=>{
-  const {postId} = useParams();
-  const postDetail =  postItems.find(item=>postId===item.id)
-  const {desc, link} =postDetail;
-  const renderDetail = () =>{
-    let rows =[];
-    for(const key in desc){
+const DetailPost = ({ theme, changeTheme }) => {
+  const { postId } = useParams();
+  const postDetail = postItems.find(item => postId === item.id)
+  const { desc, link } = postDetail;
+  const renderDetail = () => {
+    let rows = [];
+    for (const key in desc) {
       rows.push(
-      <React.Fragment>
-      <div className='main--text'>
-        {key}
-      </div>
-      <div className='detail--text'>
-        {desc[key]}
-      </div>
-      </React.Fragment>
+        <React.Fragment>
+          <div className='main--text'>
+            {key}
+          </div>
+          <div className='detail--text'>
+            {desc[key]}
+          </div>
+        </React.Fragment>
       )
     }
     return rows;
   }
   return (
-  <div data-theme={theme}  className='detailPost'>
-        <Navbar
+    <div data-theme={theme} className='detailPost'>
+      <Navbar
         className={`nav--home animate__animated animate__fadeIn ${theme}`}
         fixed='top'
         variant='dark'
@@ -62,29 +62,29 @@ const DetailPost = ({theme, changeTheme})=>{
           </Nav>
         </Container>
       </Navbar>
-      <div className='container-fluid detailPost__wrapper d-flex justify-content-center'>
-        <div className='imagesShow col-6 me-4'>
-          <ImageShow postDetail={postDetail}/>
+      <div className='container-fluid detailPost__wrapper d-flex flex-wrap justify-content-center'>
+        <div className='imagesShow col-11 col-md-6 me-4'>
+          <ImageShow postDetail={postDetail} />
         </div>
-        <div className='postInfor col-4 mt-4 pt-2'>
+        <div className='postInfor col-11 col-md-4 mt-4 pt-2 mb-3'>
           {renderDetail()}
           {
-        link &&
-        <div className='d-flex justify-content-center'>
-        <Button
-        onClick={() =>
-          window.open(link)
-        }
-        className='button--cv col-4 mt-4'
-        size='sm'
-      >
-        VISIT SITE
-      </Button>
-      </div>
-      }
+            link &&
+            <div className='d-flex justify-content-center'>
+              <Button
+                onClick={() =>
+                  window.open(link)
+                }
+                className='button--cv col-4 mt-4'
+                size='sm'
+              >
+                VISIT SITE
+              </Button>
+            </div>
+          }
         </div>
       </div>
-  </div>)
+    </div>)
 }
 
 export default DetailPost;

@@ -29,15 +29,17 @@ function App() {
   }
 
   return (
-    <BrowserRouter>
-    <Routes>
-      <Route path="/" element={<Home theme={theme} changeTheme={changeTheme}/>}></Route>
-      <Route path="/post" >
-        <Route index element={<Home theme={theme} changeTheme={changeTheme}/>} />
-        <Route path=":postId" element={<DetailPost theme={theme} changeTheme={changeTheme}/>}/>
-      </Route>
-    </Routes>
-  </BrowserRouter>
+    <div data-theme={theme} className='app_wrapper'>
+      <BrowserRouter>
+        <Routes>
+          <Route path="/" element={<Home theme={theme} changeTheme={changeTheme} />}></Route>
+          <Route path="/post" >
+            <Route index element={<Home theme={theme} changeTheme={changeTheme} />} />
+            <Route path=":postId" element={<DetailPost theme={theme} changeTheme={changeTheme} />} />
+          </Route>
+        </Routes>
+      </BrowserRouter>
+    </div>
   );
 }
 

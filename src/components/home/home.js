@@ -97,7 +97,6 @@ export default function Home({ theme, changeTheme }) {
   const categorizedPost = PorfolioItems.filter((item, index) =>
     item.category.some((itemCategory) => (itemCategory === category)))
 
-  console.log('categorizedPost', categorizedPost);
   return (
     <React.Fragment>
       <Navbar
@@ -345,7 +344,7 @@ export default function Home({ theme, changeTheme }) {
                       <div className='d-flex justify-content-center'>
                         <Button
                           onClick={() => setMorePost(!morePost)}
-                          className='me-5 mb-5 button--cv col-2'
+                          className='me-5 mb-5 button--cv col-md-2 col-4'
                           size='sm'
                         >
                           {
