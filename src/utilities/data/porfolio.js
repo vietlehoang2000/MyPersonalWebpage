@@ -28,9 +28,9 @@ const PorfolioItems = [
     category: ['All', 'Next'],
     brief: 'A diary app to share weekly knowledge between team members',
     desc: {
-      'Main objective': 'Familiarize with new tech stack and develop a full stack web application.',
+      'Main objective': 'A diary app to share weekly knowledge between team members. Familiarize with new tech stack and develop a full stack web application.',
       'Technologies used': '-Front-end: Typescript, NextJs, Apollo-Client, Mantine\n-Back-end: GraphQl, NestJs, JWT, TypeOrm',
-      'Valuable outcome': '-Experience with NextJs and NestJs tech stack.\n-Build and deploy a GraphQl server.\n-.\n-Handle merging different REST API.\n-Enhance problem-solving skills and ability to troubleshoot and debug code.'
+      'Valuable outcome': '-Experience with NextJs and NestJs tech stack.\n-Document, develop and implement authentication solution.\n-Build and deploy a GraphQl server.\n-Handle merging different REST API.\n-Enhance problem-solving skills and ability to troubleshoot and debug code.'
     },
     utilities: [DND, DND2],
     image: DND,
