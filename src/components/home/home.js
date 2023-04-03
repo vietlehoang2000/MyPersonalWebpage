@@ -39,6 +39,8 @@ import Navbar from 'react-bootstrap/Navbar';
 import { Link as LinkScroll } from 'react-scroll';
 import { Link } from "react-router-dom";
 
+import VietLeCV from '../../utilities/CV/VietLeCV.pdf';
+
 export default function Home({ theme, changeTheme }) {
 
   const [category, setCategory] = useState('All');
@@ -58,7 +60,7 @@ export default function Home({ theme, changeTheme }) {
   const handleShow = () => setShow(true);
 
   function downloadCV() {
-    window.open("https://www.topcv.vn/xem-cv/XANeV1UCBgMGBgcGVAVWV1xRDQECUQlUDFNWAA2ae7?utm_source=link_i_topcv&utm_campaign=link_i_topcv&utm_medium=link_i_topcv");
+    window.open(VietLeCV);
   }
 
   function sendEmail(e) {
@@ -128,7 +130,7 @@ export default function Home({ theme, changeTheme }) {
             <LinkScroll to='contact' spy={true} offset={-100} isDynamic={true}>
               Contact
             </LinkScroll>
-            <a href={CV} download="Le-Hoang-Viet-CV">
+            <a href={VietLeCV} download="Le-Hoang-Viet-CV">
               <Button className="button--cv" size="sm">
                 My CV
               </Button>
@@ -231,7 +233,7 @@ export default function Home({ theme, changeTheme }) {
                     <span>H.</span> Vincent Le
                   </h3>
                   <p>
-                    Hi, I am a front-end developer located in Hanoi and I have a
+                    Hi, I am a front-end developer located in Melbourne and I have a
                     strong enthusiasm in software & web developing. Therefore,
                     to be part of creating extra-ordinary UI/UX products to
                     emphasise on outstanding Brand Identity by virtue of
