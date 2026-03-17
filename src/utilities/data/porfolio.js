@@ -49,52 +49,52 @@ const PorfolioItems = [
     utilities: [Iot, DashboardAerport, DashboardAerport2],
     image: Iot,
   },
-  {
-    id: 'apple-products',
-    name: 'apple products',
-    category: ['All', 'React'],
-    brief: 'An online shopping site provides apple\'s products imitate experience of real users.',
-    desc: {
-      'Main objective': 'An online shopping site provides apple\'s products implement CRUD and JWT authentication.',
-      'Key features': 'User authentication, log in, register,  price filter, searching key, pagination.',
-      'Technologies used': 'RestApi, JWT authentication, Reactjs, NodeJs, JSON server, Redux, Redux-thunk, react-router, bootstrap, animate.',
-      'Valuable outcome': 'Learning HTTP methods by REST API, protecting resources using JWT bearer token, implementing login and register user in the application.'
-    },
-    utilities: [Apple, Apple1, Apple2, Apple3],
-    image: Apple,
-    link: 'https://apple-product-vietlehoang2000.netlify.app/components/authentication/Authenticate',
-  },
-  {
-    id: 'mammas-milk-project',
-    name: 'Mammas milk project',
-    category: ['All', 'UI', 'Wordpress'],
-    brief: 'a WordPress website developed for  a sole proprietorship business in Mackay, Queensland.',
-    desc: {
-      'Main objective': 'Providing a WordPress website for  a sole proprietorship business in Mackay, Queensland.',
-      'Key features': 'New brand guildline, rebuilding the old sites with Wordpress, implement new feature enhancing the business operation (online appointment, build in forms, mailing system, blogging etc).',
-      'Technologies used': 'WordPress, Elementor pro, appropriate plugins (bookly, WP mail, WP form, WP vivid backup, etc)',
-      'Valuable outcome': 'Gain experience working with  real world business, learn to develop, build and deploy a CMS site, research and test various plugins and templates.'
-    },
-    utilities: [Mammas1, Mammas2, Mammas3, Mammas4],
-    image: Mamamsilk,
-    link: 'https://test-mammasmilk.pantheonsite.io/',
-  },
-  {
-    id: 'people-health-project',
-    name: 'People health project',
-    category: ['All', 'Vanilla', 'JQuerry'],
-    brief: 'A dashboard site implemented Firebase database developed for a study case of medicines stock management',
-    desc: {
-      'Main objective': 'A dashboard site implemented Firebase database (Non-Sql) with CRUD abilities, the app is build to manage stock and sales for a small pharmacy store. Working in a group of 4 co-oporate both back-end and front-end',
-      'Team size': 4,
-      'Key features': 'authenticate users, show stocks, search by name, create, read, update, delete stocks on real time database.',
-      'Technologies used': 'VannilaJs, Bootstrap, Express, Firebase, Firebase authentication.',
-      'Valuable outcome': 'Corporate with back-end developer, implement real-time database by firebase, practice CRUD with REST api.'
-    },
-    utilities: [PeopleHealth1, PeopleHealth2, PeopleHealth3, PeopleHealth4],
-    image: Inventory,
-    link: 'https://mitp-project.herokuapp.com/index.html',
-  },
+  // {
+  //   id: 'apple-products',
+  //   name: 'apple products',
+  //   category: ['All', 'React'],
+  //   brief: 'An online shopping site provides apple\'s products imitate experience of real users.',
+  //   desc: {
+  //     'Main objective': 'An online shopping site provides apple\'s products implement CRUD and JWT authentication.',
+  //     'Key features': 'User authentication, log in, register,  price filter, searching key, pagination.',
+  //     'Technologies used': 'RestApi, JWT authentication, Reactjs, NodeJs, JSON server, Redux, Redux-thunk, react-router, bootstrap, animate.',
+  //     'Valuable outcome': 'Learning HTTP methods by REST API, protecting resources using JWT bearer token, implementing login and register user in the application.'
+  //   },
+  //   utilities: [Apple, Apple1, Apple2, Apple3],
+  //   image: Apple,
+  //   link: 'https://apple-product-vietlehoang2000.netlify.app/components/authentication/Authenticate',
+  // },
+  // {
+  //   id: 'mammas-milk-project',
+  //   name: 'Mammas milk project',
+  //   category: ['All', 'UI', 'Wordpress'],
+  //   brief: 'a WordPress website developed for  a sole proprietorship business in Mackay, Queensland.',
+  //   desc: {
+  //     'Main objective': 'Providing a WordPress website for  a sole proprietorship business in Mackay, Queensland.',
+  //     'Key features': 'New brand guildline, rebuilding the old sites with Wordpress, implement new feature enhancing the business operation (online appointment, build in forms, mailing system, blogging etc).',
+  //     'Technologies used': 'WordPress, Elementor pro, appropriate plugins (bookly, WP mail, WP form, WP vivid backup, etc)',
+  //     'Valuable outcome': 'Gain experience working with  real world business, learn to develop, build and deploy a CMS site, research and test various plugins and templates.'
+  //   },
+  //   utilities: [Mammas1, Mammas2, Mammas3, Mammas4],
+  //   image: Mamamsilk,
+  //   link: 'https://test-mammasmilk.pantheonsite.io/',
+  // },
+  // {
+  //   id: 'people-health-project',
+  //   name: 'People health project',
+  //   category: ['All', 'Vanilla', 'JQuerry'],
+  //   brief: 'A dashboard site implemented Firebase database developed for a study case of medicines stock management',
+  //   desc: {
+  //     'Main objective': 'A dashboard site implemented Firebase database (Non-Sql) with CRUD abilities, the app is build to manage stock and sales for a small pharmacy store. Working in a group of 4 co-oporate both back-end and front-end',
+  //     'Team size': 4,
+  //     'Key features': 'authenticate users, show stocks, search by name, create, read, update, delete stocks on real time database.',
+  //     'Technologies used': 'VannilaJs, Bootstrap, Express, Firebase, Firebase authentication.',
+  //     'Valuable outcome': 'Corporate with back-end developer, implement real-time database by firebase, practice CRUD with REST api.'
+  //   },
+  //   utilities: [PeopleHealth1, PeopleHealth2, PeopleHealth3, PeopleHealth4],
+  //   image: Inventory,
+  //   link: 'https://mitp-project.herokuapp.com/index.html',
+  // },
   {
     id: 'cocacola-redesign',
     name: 'Cocacola redesign',
@@ -110,30 +110,30 @@ const PorfolioItems = [
     image: Coca,
     link: 'https://vietlehoang2000.github.io/cocacola/index.html',
   },
-  {
-    id: 'react-games',
-    name: 'react games',
-    category: ['All', 'React'],
-    brief: 'a fews fun games made by react on codesandbox',
-    image: Game,
-    link: 'https://codesandbox.io/s/woizt',
-  },
-  {
-    id: 'zou-landing-page',
-    name: 'Zou landing page',
-    category: ['All', 'JQuerry', 'UI'],
-    brief: 'a personal landing page for learning UI purpose',
-    image: Zou,
-    link: 'https://vietlehoang2000.github.io/Web_nang_cao/BTB7/zou_landing_page.html',
-  },
-  {
-    id: 'student-accounts-system',
-    name: 'student accounts system',
-    category: ['All', 'JQuerry'],
-    brief: 'a Jquerry project developed for the case study of managing students detail for a small institute',
-    image: Student,
-    link: 'https://quan-ly-sinh-vien-techmaster.herokuapp.com/index.html',
-  },
+  // {
+  //   id: 'react-games',
+  //   name: 'react games',
+  //   category: ['All', 'React'],
+  //   brief: 'a fews fun games made by react on codesandbox',
+  //   image: Game,
+  //   link: 'https://codesandbox.io/s/woizt',
+  // },
+  // {
+  //   id: 'zou-landing-page',
+  //   name: 'Zou landing page',
+  //   category: ['All', 'JQuerry', 'UI'],
+  //   brief: 'a personal landing page for learning UI purpose',
+  //   image: Zou,
+  //   link: 'https://vietlehoang2000.github.io/Web_nang_cao/BTB7/zou_landing_page.html',
+  // },
+  // {
+  //   id: 'student-accounts-system',
+  //   name: 'student accounts system',
+  //   category: ['All', 'JQuerry'],
+  //   brief: 'a Jquerry project developed for the case study of managing students detail for a small institute',
+  //   image: Student,
+  //   link: 'https://quan-ly-sinh-vien-techmaster.herokuapp.com/index.html',
+  // },
 ];
 
 export default PorfolioItems;

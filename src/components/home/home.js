@@ -101,7 +101,8 @@ export default function Home({ theme, changeTheme }) {
   return (
     <React.Fragment>
       <Navbar
-        className={`nav--home animate__animated animate__fadeIn animate__delay-4s ${theme}`}
+        // animate__animated animate__fadeIn animate__delay-4s
+        className={`nav--home  ${theme}`}
         fixed='top'
         variant='dark'
       >
@@ -138,7 +139,7 @@ export default function Home({ theme, changeTheme }) {
         </Container>
       </Navbar>
       <div data-theme={theme} className='home container-fluid theme-white'>
-        {pageStatus === 'loading' ? (
+        {/* {pageStatus === 'loading' ? (
           <div className='home__wrapper'>
             <div className='logoPos'>
               <img
@@ -148,250 +149,251 @@ export default function Home({ theme, changeTheme }) {
               ></img>
             </div>
           </div>
-        ) : (
-          <>
-            <div
-              className='home__burger-menu text-end animate__animated animate__fadeIn'
-              onClick={handleShow}
-            >
+        ) : ( */}
+        <>
+          <div
+            className='home__burger-menu text-end animate__animated animate__fadeIn'
+            onClick={handleShow}
+          >
+            <img
+              alt='spinning logo'
+              className='imageSpinNav'
+              src={theme === 'dark' ? Logo : LogoWhite}
+            ></img>
+          </div>
+          <BurgerMenu show={show} handleClose={handleClose}></BurgerMenu>
+          <div
+            id='home'
+            className='home__wrapper row justify-content-center align-items-center'
+          >
+            <div className='home__image col-11 col-sm-8 col-lg-5 text-lg-end text-center animate__animated animate__fadeIn'>
               <img
-                alt='spinning logo'
-                className='imageSpinNav'
-                src={theme === 'dark' ? Logo : LogoWhite}
+                alt='avatar-main'
+                className={`img--avatar ${imageAnimation}`}
+                src={Avatar}
               ></img>
             </div>
-            <BurgerMenu show={show} handleClose={handleClose}></BurgerMenu>
-            <div
-              id='home'
-              className='home__wrapper row justify-content-center align-items-center'
-            >
-              <div className='home__image col-11 col-sm-8 col-lg-5 text-lg-end text-center animate__animated animate__fadeIn'>
-                <img
-                  alt='avatar-main'
-                  className={`img--avatar ${imageAnimation}`}
-                  src={Avatar}
-                ></img>
+            <div className='home__text col-10 col-sm-7  col-lg-5 animate__animated animate__fadeIn'>
+              <h1 className='text--back-ground'>Home</h1>
+              <h1 className='text--main'>
+                <span>Vincent</span> Le
+              </h1>
+              <h5>
+                IT Support Engineer | System Administration & Cloud (Azure)
+              </h5>
+              <div className='social__media-logo d-flex'>
+                <a
+                  href='https://www.linkedin.com/in/vincent-le-5941b4205'
+                  target='_blank'
+                  rel='noreferrer'
+                >
+                  <FaLinkedin className='media__logo'></FaLinkedin>
+                </a>
+                <a
+                  href='https://www.linkedin.com/in/vincent-le-5941b4205'
+                  target='_blank'
+                  rel='noreferrer'
+                  className='text--logo'
+                >   <p className='text--logo'>Vincent Le</p></a>
               </div>
-              <div className='home__text col-10 col-sm-7  col-lg-5 animate__animated animate__fadeIn'>
-                <h1 className='text--back-ground'>Home</h1>
-                <h1 className='text--main'>
-                  <span>Vincent</span> Le
-                </h1>
+            </div>
+          </div>
+
+          <div
+            id='about'
+            data-aos='fade-up'
+            className='about__wrapper container '
+          >
+            <div className='about__main-image text-center col-9 col-sm-8 col-6'>
+              <img alt='main-about-pic' width='100%' src={Galery}></img>
+            </div>
+            <div className='about__main-text col-auto'>
+              <h1 className='text--back-ground'>ABOUT</h1>
+              <h2 className='text--main text-center mt-5 mb-5'>Me</h2>
+            </div>
+            <div className='about__main-text row justify-content-between'>
+              <div className='main-text--left col-sm-6  col-lg-5'>
+                <h3>
+                  <span>H.</span> Vincent Le
+                </h3>
+                <p>
+                  Hi, I am an IT Support Engineer based in Melbourne with a strong passion for system administration and cloud technologies. I enjoy working with infrastructure, networking, and cloud platforms to deliver reliable and efficient IT solutions. With hands-on experience in device deployment, server management, and troubleshooting, I am focused on building scalable and secure environments while continuously developing my skills in Microsoft Azure.
+                </p>
+                <a download='Le-Hoang-Viet-CV'>
+                  <Button
+                    onClick={() => downloadCV()}
+                    className='mt-3 mb-3 button--cv col-sm-6'
+                    size='lg'
+                  >
+                    Get My CV
+                  </Button>
+                </a>
+              </div>
+              <div className='main-text--right col-sm-6 col-lg-5'>
                 <h5>
-                  IT Support Engineer | Infrastructure | Networking | Cloud
+                  Phone:{' '}
+                  <a className='phone' href='tel:+61202213665'>
+                    <span>+61 432537314</span>
+                  </a>
                 </h5>
-                <div className='social__media-logo d-flex'>
-                  <a
-                    href='https://www.linkedin.com/in/vincent-le-5941b4205'
-                    target='_blank'
-                    rel='noreferrer'
-                  >
-                    <FaLinkedin className='media__logo'></FaLinkedin>
+                <h5>
+                  Email:{' '}
+                  <a className='mail' href='mailto:vincentle4work@gmail.com'>
+                    <span>vincentle4work@gmail.com</span>
                   </a>
-                  <a
-                    href='https://www.linkedin.com/in/vincent-le-5941b4205'
-                    target='_blank'
-                    rel='noreferrer'
-                  >   <p className='text--logo'>Vincent Le</p></a>
-                </div>
+                </h5>
               </div>
             </div>
+          </div>
 
-            <div
-              id='about'
-              data-aos='fade-up'
-              className='about__wrapper container '
-            >
-              <div className='about__main-image text-center col-9 col-sm-8 col-6'>
-                <img alt='main-about-pic' width='100%' src={Galery}></img>
-              </div>
-              <div className='about__main-text col-auto'>
-                <h1 className='text--back-ground'>ABOUT</h1>
-                <h2 className='text--main text-center mt-5 mb-5'>Me</h2>
-              </div>
-              <div className='about__main-text row justify-content-between'>
-                <div className='main-text--left col-sm-6  col-lg-5'>
-                  <h3>
-                    <span>H.</span> Vincent Le
-                  </h3>
-                  <p>
-                    Hi, I am an IT Support Engineer based in Melbourne with a strong passion for system administration and cloud technologies. I enjoy working with infrastructure, networking, and cloud platforms to deliver reliable and efficient IT solutions. With hands-on experience in device deployment, server management, and troubleshooting, I am focused on building scalable and secure environments while continuously developing my skills in Microsoft Azure.
-                  </p>
-                  <a download='Le-Hoang-Viet-CV'>
-                    <Button
-                      onClick={() => downloadCV()}
-                      className='mt-3 mb-3 button--cv col-sm-6'
-                      size='lg'
-                    >
-                      Get My CV
-                    </Button>
-                  </a>
-                </div>
-                <div className='main-text--right col-sm-6 col-lg-5'>
-                  <h5>
-                    Phone:{' '}
-                    <a className='phone' href='tel:+61202213665'>
-                      <span>+61 432537314</span>
-                    </a>
-                  </h5>
-                  <h5>
-                    Email:{' '}
-                    <a className='mail' href='mailto:vincentle4work@gmail.com'>
-                      <span>vincentle4work@gmail.com</span>
-                    </a>
-                  </h5>
-                </div>
-              </div>
+          <div
+            data-aos='fade-right'
+            id='porfolio'
+            className='porfolio__wrapper container mt-5'
+          >
+            <div className='porfolio-text'>
+              <h1 className='text--back-ground'>Portfolio</h1>
+              <h1 className='text-main'>My works</h1>
             </div>
+            <div className='porfolio-category '>
+              <ul className='d-flex justify-content-center'>
+                <li
+                  className={`li ${category === 'All' && 'active'}`}
+                  onClick={() => setCategory('All')}
+                >
+                  All
+                </li>
+                <li
+                  className={`li ${category === 'Web Dev' && 'active'}`}
+                  onClick={() => setCategory('React')}
+                >
+                  Web Dev
+                </li>
 
-            <div
-              data-aos='fade-right'
-              id='porfolio'
-              className='porfolio__wrapper container mt-5'
-            >
-              <div className='porfolio-text'>
-                <h1 className='text--back-ground'>Portfolio</h1>
-                <h1 className='text-main'>My works</h1>
-              </div>
-              <div className='porfolio-category '>
-                <ul className='d-flex justify-content-center'>
-                  <li
-                    className={`li ${category === 'All' && 'active'}`}
-                    onClick={() => setCategory('All')}
-                  >
-                    All
-                  </li>
-                  <li
-                    className={`li ${category === 'Web Dev' && 'active'}`}
-                    onClick={() => setCategory('React')}
-                  >
-                    Web Dev
-                  </li>
-
-                </ul>
-              </div>
-              <div className='items-list row'>
-                {
-                  categorizedPost.length < 6 ?
-                    categorizedPost.map((item, index) =>
+              </ul>
+            </div>
+            <div className='items-list row'>
+              {
+                categorizedPost.length < 6 ?
+                  categorizedPost.map((item, index) =>
+                    <Item
+                      item={item}
+                      key={item.id}
+                    ></Item>
+                  )
+                  :
+                  <React.Fragment>
+                    {categorizedPost.map((item, index) =>
+                      (morePost || index < 6) &&
                       <Item
                         item={item}
                         key={item.id}
                       ></Item>
                     )
-                    :
-                    <React.Fragment>
-                      {categorizedPost.map((item, index) =>
-                        (morePost || index < 6) &&
-                        <Item
-                          item={item}
-                          key={item.id}
-                        ></Item>
-                      )
-                      }
-                      <div className='d-flex justify-content-center'>
-                        <Button
-                          onClick={() => setMorePost(!morePost)}
-                          className='me-5 mb-5 button--cv col-md-2 col-4'
-                          size='sm'
-                        >
-                          {
-                            !morePost ? 'SHOW MORE' : 'SHOW LESS'
-                          }
-
-                        </Button>
-                      </div>
-                    </React.Fragment>
-                }
-              </div>
-            </div>
-
-            <div
-              data-aos='fade-up'
-              id='contact'
-              className='contact__wrapper container '
-            >
-              <div className='porfolio-text'>
-                <h1 className='text--back-ground'>Get In Touch</h1>
-                <h1 className='text-main'>Contact</h1>
-              </div>
-              <p className='col-8 col-lg-6'>
-                Thanks for visiting my portfolio and reviewing my CV. If you'd like to connect, feel free to reach out!
-              </p>
-
-              <div className='contact-main row d-flex flex-lg-row-reverse justify-content-center pb-md-2'>
-                <div className='contact-main--right-block col-9 col-lg-6'>
-                  <Map></Map>
-                </div>
-                <div className='contact-main--left-block col-9 col-lg-6'>
-                  <form onSubmit={sendEmail}>
-                    <div className='group-input name mt-5'>
-                      <input type='text' required='required' name='from_name' />
-                      <label>Name</label>
-                    </div>
-                    <div className='group-input email mt-5'>
-                      <input type='email' required='required' name='from_mail' />
-                      <label>Email</label>
-                    </div>
-                    <div className='group-input message mt-5'>
-                      <input type='Message' required='required' name='message' />
-                      <label>Message</label>
-                    </div>
-
-                    {showAlert !== '' && (
-                      <Alert
-                        variant={showAlert}
-                        onClose={() => setShowAlert('')}
-                        dismissible
+                    }
+                    <div className='d-flex justify-content-center'>
+                      <Button
+                        onClick={() => setMorePost(!morePost)}
+                        className='me-5 mb-5 button--cv col-md-2 col-4'
+                        size='sm'
                       >
-                        {showAlert === 'success' ? (
-                          <Alert.Heading>Thanks for contacting me!</Alert.Heading>
-                        ) : (
-                          <Alert.Heading>
-                            Sorry, there are some issues sending your mail
-                          </Alert.Heading>
-                        )}
-                      </Alert>
-                    )}
+                        {
+                          !morePost ? 'SHOW MORE' : 'SHOW LESS'
+                        }
 
-                    <Button
-                      type='submit'
-                      className='mt-5 mx-auto button--cv col-sm-6'
-                      size='lg'
+                      </Button>
+                    </div>
+                  </React.Fragment>
+              }
+            </div>
+          </div>
+
+          <div
+            data-aos='fade-up'
+            id='contact'
+            className='contact__wrapper container '
+          >
+            <div className='porfolio-text'>
+              <h1 className='text--back-ground'>Get In Touch</h1>
+              <h1 className='text-main'>Contact</h1>
+            </div>
+            <p className='col-8 col-lg-6'>
+              Thanks for visiting my portfolio and reviewing my CV. If you'd like to connect, feel free to reach out!
+            </p>
+
+            <div className='contact-main row d-flex flex-lg-row-reverse justify-content-center pb-md-2'>
+              <div className='contact-main--right-block col-9 col-lg-6'>
+                <Map></Map>
+              </div>
+              <div className='contact-main--left-block col-9 col-lg-6'>
+                <form onSubmit={sendEmail}>
+                  <div className='group-input name mt-5'>
+                    <input type='text' required='required' name='from_name' />
+                    <label>Name</label>
+                  </div>
+                  <div className='group-input email mt-5'>
+                    <input type='email' required='required' name='from_mail' />
+                    <label>Email</label>
+                  </div>
+                  <div className='group-input message mt-5'>
+                    <input type='Message' required='required' name='message' />
+                    <label>Message</label>
+                  </div>
+
+                  {showAlert !== '' && (
+                    <Alert
+                      variant={showAlert}
+                      onClose={() => setShowAlert('')}
+                      dismissible
                     >
-                      Message Me
-                    </Button>
-                  </form>
-                </div>
-              </div>
-            </div>
+                      {showAlert === 'success' ? (
+                        <Alert.Heading>Thanks for contacting me!</Alert.Heading>
+                      ) : (
+                        <Alert.Heading>
+                          Sorry, there are some issues sending your mail
+                        </Alert.Heading>
+                      )}
+                    </Alert>
+                  )}
 
-            <div className='footer'>
-              <hr></hr>
-              <div className='footer-wrapper mx-auto container d-flex justify-content-between'>
-                <img
-                  alt='logo'
-                  width='54px'
-                  height='33px'
-                  src={theme === 'light' ? LogoWhite : Logo}
-                ></img>
-                <div className='footer--adress'>
-                  <h4>
-                    @2025 Vincent Le
-                  </h4>
-                </div>
-                <div className='footer--contact'>
-                  <a className='mail' href='mailto:vitll474@gmail.com'>
-                    <h4>vietlehoang2000@gmail.com</h4>
-                  </a>
-                  <a className='phone' href='tel:+61202213665'>
-                    <h4>+61 432537314</h4>
-                  </a>
-                </div>
+                  <Button
+                    type='submit'
+                    className='mt-5 mx-auto button--cv col-sm-6'
+                    size='lg'
+                  >
+                    Message Me
+                  </Button>
+                </form>
               </div>
             </div>
-          </>
-        )}
+          </div>
+
+          <div className='footer'>
+            <hr></hr>
+            <div className='footer-wrapper mx-auto container d-flex justify-content-between'>
+              <img
+                alt='logo'
+                width='54px'
+                height='33px'
+                src={theme === 'light' ? LogoWhite : Logo}
+              ></img>
+              <div className='footer--adress'>
+                <h4>
+                  @2025 Vincent Le
+                </h4>
+              </div>
+              <div className='footer--contact'>
+                <a className='mail' href='mailto:vincentle4work@gmail.com'>
+                  <h4>vincentle4work@gmail.com</h4>
+                </a>
+                <a className='phone' href='tel:+61202213665'>
+                  <h4>+61 432537314</h4>
+                </a>
+              </div>
+            </div>
+          </div>
+        </>
+        {/* )} */}
       </div>
     </React.Fragment>
   );

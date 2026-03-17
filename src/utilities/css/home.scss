@@ -104,8 +104,9 @@ html.transition *:after {
 
 .text--logo {
 	margin-left: none;
-	color: var(--p-color);
+	color: var(--h1-right-color);
 	font-style: italic;
+	text-decoration: none;
 }
 
 .logoPos {
